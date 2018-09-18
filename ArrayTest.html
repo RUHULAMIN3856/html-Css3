@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        function CalculateAge() {
+            var curYear = new Date().getUTCFullYear();
+            var age = curYear - document.getElementById('txtyear').value;        
+            document.getElementById('txtAge').value = age;            
+        }
+            //var myArray = [];
+            //var myArray = [10, 20, 30];
+            //document.writeln("First Element:" + myArray[0]);
+            //document.writeln("Last Element:" + myArray[myArray.length - 2] + "<br/>");
+        //document.write(myArray.length) 
+
+
+        //var EvenArray = [5, 10, 15, 20,25,50,1]
+        //var lastelement = EvenArray.shift();
+        //document.write(lastelement + "<br/>");
+        //document.write(EvenArray.length);
+        //alert(EvenArray);
+
+        //var myarrey = ["Ruhul", "Sakil", "Belal"];
+        //var sorted = myarrey.sort().reverse();
+        //document.write(sorted);
+         
+        //var myarrey = [1, 2, 3, , 4, 5];
+        //var sorted = myarrey.sort(function (a, b) { return a - b }).reverse();
+        //document.write(sorted + "<br/>");
+
+        //var myarrey = [1, 2, 3, 4, 5, 6, 7];
+        ////myarrey.splice(2, 3, 5, 6);
+        //myarrey.splice(2,2,"Ruhul");
+        //document.write(myarrey);
+
+
+        var myarrey = [1, 2, 3, 4, 5, 6, 7, 8, 9, 12];
+        function isEven(value, index, arrey) {
+            if (value % 2 == 0) {
+                return true
+            }
+            else{
+                return false;
+            }
+
+        }
+
+        var myArrey = ["rgkgguy", "luiyi", "yuitty", "yityuu"];
+        var result=myArrey.filter(function(value,index,arrey){})
+
+    </script>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <!--<div>       
+        Year:<input type="text"id="txtYear"/><br/>
+        <input type="button"value="Calculate Age"onclick="CalculateAge()"/><br/>       
+        <input id="txtAge"type="text"/>       
+    </div>-->
+</body>
+</html>
