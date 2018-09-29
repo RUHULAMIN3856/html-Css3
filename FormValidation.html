@@ -3,6 +3,27 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <!--<link rel="stylesheet"href="Scripts/jquery-3.3.1.js"type="text/css" />-->
+    <style>
+        .checked{
+            color:bisque;
+        }
+        :valid{
+            border:solid lime;
+            font-weight:normal;
+        }
+        :invalid{
+            border:solid green;
+            font-weight:bold;
+        }
+        :required{
+            background-color:burlywood;
+
+        }
+        :optional{
+            background-color:darkgray;
+        }
+    </style>
 </head>
 <body>
     <form>
@@ -11,7 +32,7 @@
                 <table border="1" height="250" width="500" style="background-color:antiquewhite">
                     <tr><td><label>Name  :</label></td><td><input id="txtname" type="text" required="required" placeholder="Your Name" /></td></tr>
                     <tr><td><label>Email Address:</label></td><td><input id="txtmail" type="text" required="required" placeholder="abc@xyz.com" /></td></tr>
-                    <tr><td><label>Phone Number :</label></td><td><input id="txtphone" type="number" required="required" placeholder="01XXX-XXXXXX" pattern="01XXX-" /></td></tr>
+                    <tr><td><label>Phone Number :</label></td><td><input id="txtphone" type="number" required="required" placeholder= "01XXX-XXXXXX"  pattern="01XXX-" /></td></tr>
                     <tr>
                         <td><label>District :</label></td>
                         <td>
