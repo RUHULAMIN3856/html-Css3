@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form>
+        <div id="divname">
+            <center>
+                <table border="1" height="250" width="500" style="background-color:antiquewhite">
+                    <tr><td><label>Name  :</label></td><td><input id="txtname" type="text" required="required" placeholder="Your Name" /></td></tr>
+                    <tr><td><label>Email Address:</label></td><td><input id="txtmail" type="text" required="required" placeholder="abc@xyz.com" /></td></tr>
+                    <tr><td><label>Phone Number :</label></td><td><input id="txtphone" type="number" required="required" placeholder="01XXX-XXXXXX" pattern="01XXX-" /></td></tr>
+                    <tr>
+                        <td><label>District :</label></td>
+                        <td>
+                            <select required="required">
+                                <option value="">------Select One -----</option>
+                                <option value="Dhaka">Dhaka</option>
+                                <option value="Chittagong">Chittagong</option>
+                                <option value="Barishal">Barishal</option>
+                                <option value="Dinajpur">Dinajpur</option>
+                                <option value="Rajshahi">Rajshahi</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr><td><label>Age :</label></td><td><input id="txtAge" type="number" min="18" max="30" placeholder="Input Your Age" /></td></tr>
+                    <tr><td> <label>Rating :</label></td><td><input id="type=" range" type="range" min="1" max="10" /></td></tr>
+                    <tr><td><label>URL:</label></td><td><input type="url" name="website" required="required" pattern="http?://.+" placeholder="http://www.facebook.com4"/></td></tr>
+                    <tr><td><input type="submit" value="Submit" /></td><td></td></tr>
+                </table>
+            </center>
+
+        </div>
+    </form>
+</body>
+</html>
