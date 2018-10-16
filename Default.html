@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/Default.js"></script>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <link href="css/Default.css" rel="stylesheet" />
+</head>
+<body>
+    
+        <div id="container">
+            <header>
+                <hgroup id="headerText">
+                    <h1>Contacts</h1>
+                </hgroup>
+            </header>
+            <div role="main">
+                <table id="contacts">
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Name</th>
+
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+                <div id="editContact">
+                  
+                        <h2 id="currentAction"></h2>
+                        <div>
+                            <label for="firstName">First Name:</label>
+                            <input type="text" id="firstName" name="firstName" />
+                        </div>
+                        <div>
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" id="lastName" name="lastName" />
+                        </div>
+                        <div>
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email" />
+                        </div>
+                        <div>
+                            <label for="phoneNumber">Phone Number:</label>
+                            <input type="text" id="phoneNumber" name="phoneNumber" />
+                        </div>
+                        <div class="buttons">
+                            <button id="btnSave" name="save">Save</button>
+                 
+                    </div>
+                </div>
+    </div>
+    </div>
+    <script>
+        function setCookie(cookieName, cookieValue, expirationDays) {
+            var expirationDate = new Date();
+            expirationDate.setDate(expirationDate.getDate() + expirationDays);
+            cookieValue = cookieValue + "; expires=" + expirationDate.toUTCString();
+            document.cookie = cookieName + "=" + cookieValue;
+        }
+        // retrieving the cookie value
+        function getCookie(cookieName) {
+            var cookies = document.cookie.split(";");
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                var index = cookie.indexOf("=");
+                var key = cookie.substr(0, index);
+                var val = cookie.substr(index + 1);
+                if (key == cookieName)
+                    return val;
+            }
+        }
+        // usage
+        setCookie('firstName', 'Glenn', 1);
+        var firstName = getCookie('firstName');
+    </script>
+
+</body>
+</html>
