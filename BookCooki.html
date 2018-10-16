@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input id="key" type="text" />
+    <input id="name" type="text" />
+    <input id="setcooki" type="button" value="Set cooki" onclick="set()" />
+    <input id="getcooki" type="button" value="Get cooki" onclick="Get()" />
+    <script>
+        function setCookie(cookieName, cookieValue, expirationDays) {
+            var expirationDate = new Date();
+            expirationDate.setDate(expirationDate.getDate() + expirationDays);
+            cookieValue = cookieValue + "; expires=" + expirationDate.toUTCString();
+            document.cookie = cookieName + "=" + cookieValue;
+        }
+        function getCookie(cookieName) {
+            var cookies = document.cookie.split(";");
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                var index = cookie.indexOf("=");
+                var key = cookie.substr(0, index);
+                var val = cookie.substr(index + 1);
+                if (key == cookieName) {
+                    return val;
+                }
+
+            }
+
+        }
+        function set() {
+            var key = document.getElementById('key').Value;
+            var Value = document.getElementById('name').Value;
+            setCookie(key,Value,1);
+        }
+        function Get() {
+            var key = document.getElementById('key').Value;
+            document.getElementById('name').Value = getCookie(key);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body onload="GetLocaldate()">
+    
+    <input id="txtStorage" type="text" />
+    <input id="btnSave" type="button" value="Save" onclick="save()" />
+    <input id="btnRemove" type="button" value="Remove" onclick="removeData()" />
+    <script>
+        function save() {
+            var txtValue = document.getElementById('txtStorage').value;
+            localStorage.setItem('Name', txtValue);
+        }
+        function GetLocaldate() {
+            var getdata = localStorage.getItem('Name');
+            if (getdata != "") {
+                document.getElementById('txtStorage').value = getdata;
+            }
+            else {
+                alert('Local data not found !');
+            }
+        }
+        function removeData() {
+            document.getElementById('txtStorage').value = "";
+            localStorage.removeItem('Name');
+        }
+    </script>
+</body>
+</html>
