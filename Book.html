@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var db = openDatabase('Book', '2.0', 'My Book', 5 * 1024 * 1024);
+        function migrateDB(transaction) {
+            transaction.executeSql("create Table if not exists Ruhul(" +
+                "id integer primary key Autoincrement," + "firstName text," + "lastName," + "dateCreate Timestamp default(datetime('now','localtime')))");
+
+        }
+        function onError(error) {
+            alert("Error code:" + error.code + "Message:" + error.message);
+        }
+        function onSuccess() {
+            alert("Migration complete!");
+        }
+        var db = openDatabase('Library', '2.0', 'My library', 5 * 1024 * 1024);
+        db.changeVersion('2.0', '3.0', migrateDB, onError, onSuccess);
+        //-------------------------------------------------------------------------
+        var db = openDatabase('Library', '2.0', 'My library', 5 * 1024 * 1024);
+        db.transaction(function (t) {
+            t.executeSql("insert into Ruhul(firstName,lastName)"
+                + "values('Ruhul','Amin')");
+        });
+    </script>
+
+</body>
+</html>

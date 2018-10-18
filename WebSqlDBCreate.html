@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var db = openDatabase('RAMIN', '1.0', 'Library', 5);
+
+        db.transaction(createTableWithData, onError, onSuccess);
+
+        function createTableWithData(tr) {
+            tr.executeSql("CREATE TABLE IF NOT EXISTS Amin(ID INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT , Address TEXT, PhoneNumber TEXT)");
+        }
+            
+
+        db.transaction(function (tx)
+        {
+                tx.executeSql("insert into Amin (Name,Address,PhoneNumber)" +
+                    "values('RUHUL','Naogaon','01710350216')");
+                tx.executeSql("insert into Amin (Name,Address,PhoneNumber)" +
+                    "values('FAISAL','Munshigong','01751350216')");
+                tx.executeSql("insert into Amin (Name,Address,PhoneNumber)" +
+                    "values('Kajal','Narayowangang','01722350216')");
+                tx.executeSql("insert into Amin (Name,Address,PhoneNumber)" +
+                "values('Azad','Chadpur','01732050216')");
+            tx.executeSql("insert into Amin (Name,Address,PhoneNumber)" +
+                "values('Salauddan','Cumilla','01537050216')");
+
+            });
+        
+        function onError(error) {
+            alert("Error coad:" + error.code + "Message" + error.message );
+        }
+        function onSuccess() {
+            alert("Done!");
+        }
+        
+        
+
+    </script>
+
+</body>
+</html>

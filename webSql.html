@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body onload="createWebSql()">
+    <script>
+        ///createDatabase
+        function createWebSql() {
+            var db = openDatabase('Library', '1.0', 'My Library', 5 * 1024 * 1024, callback());
+            //adding Table
+            db.transaction(function (tx) {
+                tx.executeSql('create Table if not exists RUHUL(id integer primary key autoincrement, name text)');
+                tx.executeSql('insert into RUHUL(name)values("Ruhul Amin")');
+            });
+        }
+            function callback() {
+                alert("Web SQL Database Created");
+            }
+    </script>
+</body>
+</html>
