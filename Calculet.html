@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <meta charset="utf-8" />
+    <title></title>
+
+</head>
+<body>
+    <input type="text" id="txt1" />  +  <input type="text" id="txt2" />=  <input type="text" id="txt3" />
+    <input type="button" id="btnsave" value="Save" />
+    <script>
+        $(document).ready(function () {
+
+
+            $('#btnsave').on('click', function () {
+                var txt2 = Number($('#txt1').val());
+                var txt3 = Number($('#txt2').val());
+
+
+                var result = txt2 + txt3;
+
+
+                $('#txt3').val(result);
+
+
+            });
+        });
+    </script>
+</body>
+</html>
